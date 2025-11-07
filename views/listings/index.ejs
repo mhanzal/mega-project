@@ -32,21 +32,12 @@
     #switchCheckDefault{
         cursor: pointer;
     }
-    .tax-toggle {
+    .tax-toggle { 
         margin-top: 15px;
     }
-    .tax2 {
-    display: none;
-}
 
 @media (max-width: 320px) {
     .tax2 {
-        display: block;
-        /* padding: 10px; */
-        font-size: 8px;
-    }
-
-    .tax1 {
         display: none;
     }
 }
@@ -56,15 +47,15 @@
 
 <body>
 
-    <div class="allbtn d-flex justify-content-center py-3 px-4 ">
+    <div class="allbtn d-flex justify-content-center py-5 px-5">
         <div class="mainBtn py-3 d-flex justify-content-center gap-3">
-            <button>Where <br> <i> Search destinations</i></button>
+            <button>Where <br> <i>destinations</i></button>
             <button>Check in <br> <i>Add dates</i></button>
             <button>Check out <br> <i>Add dates</i></button>
             <button>Who <br> <i>Add guests</i></button>
             <div class="tax-toggle d-flex gap-3">
             <label class="form-check-label tax1" for="switchCheckDefault">Display total after taxes</label>
-            <label class="form-check-label tax2" for="switchCheckDefault">Display taxes</label>
+            <!-- <label class="form-check-label tax2" for="switchCheckDefault">Display taxes</label> -->
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
             </div>
