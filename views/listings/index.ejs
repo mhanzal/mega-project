@@ -8,7 +8,6 @@
          width: 70%;
          border-radius: 100px;
          flex-wrap: wrap;
-
     }
     .mainBtn button {
         padding: 2px 30px 2px 30px;
@@ -36,9 +35,17 @@
         margin-top: 15px;
     }
 
-@media (max-width: 320px) {
     .tax2 {
         display: none;
+    }
+
+@media (max-width: 320px) {
+    .tax1 {
+        display: none;
+    }
+
+    .tax2 {
+        display: block;
     }
 }
 
@@ -47,15 +54,15 @@
 
 <body>
 
-    <div class="allbtn d-flex justify-content-center py-5 px-5">
-        <div class="mainBtn py-3 d-flex justify-content-center gap-3">
+    <div class="allbtn d-flex justify-content-center py-4">
+        <div class="mainBtn py-5 px-md-5 d-flex justify-content-center gap-3">
             <button>Where <br> <i>destinations</i></button>
             <button>Check in <br> <i>Add dates</i></button>
             <button>Check out <br> <i>Add dates</i></button>
             <button>Who <br> <i>Add guests</i></button>
             <div class="tax-toggle d-flex gap-3">
             <label class="form-check-label tax1" for="switchCheckDefault">Display total after taxes</label>
-            <!-- <label class="form-check-label tax2" for="switchCheckDefault">Display taxes</label> -->
+            <label class="form-check-label tax2" for="switchCheckDefault">taxes</label>
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
             </div>
@@ -63,7 +70,7 @@
         </div>
     </div>
     
-    <div class="d-flex flex-wrap gap-3">
+    <div class="d-flex flex-wrap justify-content-center gap-3">
         <% for (let listing of allListings) { %>
             <a class="list-link" href="/listings/<%= listing._id %>">
             <div class="card main-cards" style="width: 18rem;">
