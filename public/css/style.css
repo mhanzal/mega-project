@@ -81,7 +81,7 @@ footer .container {
   text-decoration: none;
   color: #222222;
 }
-.social i {
+.social a i {
   cursor: pointer;
   font-size: 1.8rem;
   margin: 0 10px;
