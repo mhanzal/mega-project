@@ -1,0 +1,100 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+<body>
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="col-md-6 col-lg-5">
+        <h3 class="text-center mb-4 fw-bold">Create New Listing</h3>
+
+        <form action="/listings" method="POST" novalidate class="p-4 needs-validation border rounded shadow-sm bg-white" enctype="multipart/form-data">
+            <!-- Title -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Title</label>
+                <input type="text" class="form-control py-3" placeholder="Enter title" name="listing[title]" required />
+                <div class="valid-feedback">Looks good title!</div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Description</label>
+                <textarea class="form-control py-3" rows="3" placeholder="Enter description" name="listing[description]"
+                    required></textarea>
+                    <div class="valid-feedback">Looks good description!</div>
+            </div>
+
+            <!-- Image URL -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Upload Image</label>
+                <input type="file" class="form-control py-3" placeholder="Enter image" name="listing[image]"/>
+                    <!-- <div class="valid-feedback">Looks good image!</div> -->
+            </div>
+
+            <!-- Price -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Price ($)</label>
+                <input type="number" class="form-control py-3" placeholder="Enter price in $" name="listing[price]"
+                    required />
+                    <div class="invalid-feedback">Price should be valid</div>
+            </div>
+
+            <!-- Location and Country in same row -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Location</label>
+                    <input type="text" class="form-control py-3" placeholder="Enter location" name="listing[location]"
+                        required />
+                    <div class="invalid-feedback">Location should be valid</div>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Country</label>
+                    <input type="text" class="form-control py-3" placeholder="Enter country" name="listing[country]"
+                        required />
+                    <div class="invalid-feedback">Country should be valid</div>
+
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn-add px-5 py-2">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+
+    // function refreshPage() {
+    //     setTimeout(() => {
+    //         window.location.reload();
+    //     }, 200); // 0.5 second baad refresh
+    //     return true; // form normal submit hoga
+    // }
+
+    (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+</script>
+</body>

@@ -1,0 +1,54 @@
+<style>
+        .search_btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand text-dangerx " href="/listings"><i class="fa-solid fa-compass"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/listings">Explore</a>
+                <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+            </div>
+
+            <div class="search ms-auto">
+                <form class="d-flex " role="search">
+                    <input class="form-control me-2 rounded-5 px-" type="search" placeholder="Search" aria-label="Search" />
+<button class="btn btn-danger search_btn rounded-5 px-4" type="submit">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span>Search</span>
+</button>
+                </form>
+            </div>
+
+        <div class="navbar-nav ms-auto d-flex align-items-center gap-2">
+            <a class="nav-link" href="/listings/new">Become a Host</a>
+            <% if (!curUser) { %>
+                <a href="/signup" class="btn btn-outline-danger fw-semibold px-4 rounded-pill">
+                     Sign Up
+                </a>
+                <a href="/login" class="btn btn-danger fw-semibold px-4 rounded-pill">
+                     Log In
+                </a>
+                <% } else { %>
+                    <a href="/logout" class="btn btn-outline-secondary fw-semibold px-4 rounded-pill">
+                        <i class="fa-solid fa-right-from-bracket me-1"></i> Log Out
+                    </a>
+                    <% } %>
+        </div>
+
+
+                <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+            </div>
+        </div>
+    </div>
+</nav>
