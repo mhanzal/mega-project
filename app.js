@@ -16,7 +16,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const passportLocal = require("passport-local");
 const User = require("./models/user.js");
-const ExpressError = require("./utils/ExpressError");
+const ExpressError = require("./utils/expressError");
 
 
 
